@@ -42,9 +42,9 @@ app.post('/todo', async(req, res) => {
 	        title: title
 	    });
 
-	    await newTodo.save();
+	    let savedTodo = await newTodo.save();
 
-	    res.json({ success: true, message: "Successo!!!" });
+	    res.json({ success: true, message: "Successo!!!", todo: savedTodo });
     }catch(err){
     	res.json({ success: false, message: err.message });
     }
@@ -67,7 +67,7 @@ app.put('/todo/:id', async(req, res) => {
 	    let updatedTodo = await todo.save();
 	    console.log("updatedTodo", updatedTodo);
 
-	    res.json({ success: true, message: "Successo!!!" });
+	    res.json({ success: true, message: "Successo!!!", todo: updatedTodo });
     }catch(err){
     	res.json({ success: false, message: err.message });
     }
