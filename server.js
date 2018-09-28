@@ -13,9 +13,6 @@ mongoose.connect(
 
 let ToDo = require("./models/todo");
 
-// let todoController = require("../helpers/mongoose")(ToDo);
-// const asyncMiddleware = require("../utils/asyncMiddleware");
-
 app.get('/', function (req, res) {
   res.send('Hello World!');	//envia texto
 });
