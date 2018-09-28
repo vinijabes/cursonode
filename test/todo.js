@@ -28,6 +28,7 @@ describe('Test ToDo is Working', function(done) {
             .get('/todo')
             .end(function(err, res){
                 expect(res.body.success).to.eql(true);
+                expect(res.body.success).to.eql(false);
                 expect(res.body.todos).to.be.an('array');
                 done();
             });
